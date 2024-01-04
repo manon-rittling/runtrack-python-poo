@@ -40,8 +40,8 @@ class CompteBancaire:
         print(f"Le solde du compte {self.__numeroCompte} est de {self.__solde} euros")
 
     def virement(self, compteDestinataire, somme):
-        self.__solde = self.__solde - somme
-        compteDestinataire.__solde = compteDestinataire.__solde + somme
+        self.__solde -= somme
+        compteDestinataire.__solde += somme
         print(f"Le compte {self.__numeroCompte} a été débité de {somme} euros")
         print(f"Le compte {compteDestinataire.__numeroCompte} a été crédité de {somme} euros")   
     
