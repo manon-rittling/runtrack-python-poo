@@ -39,9 +39,11 @@ class CompteBancaire:
         print(f"Le compte {self.__numeroCompte} a été débité de 5% d'agios")
         print(f"Le solde du compte {self.__numeroCompte} est de {self.__solde} euros")
 
-    def virement(self, compteDestinataire, somme):
+    def virement(self, compteDestinataire, somme, refenceVirement):
         self.__solde -= somme
         compteDestinataire.__solde += somme
+        refenceVirement = refenceVirement
+        print(f"Le virement {refenceVirement} a été effectué")
         print(f"Le compte {self.__numeroCompte} a été débité de {somme} euros")
         print(f"Le compte {compteDestinataire.__numeroCompte} a été crédité de {somme} euros")   
     
@@ -56,7 +58,7 @@ compte1.retrait(2000)
 compte1.agios()  
 compte1.afficherSolde()
 
-compte1.virement(compte2, 1200)
+compte1.virement(compte2, 1200, 145)
 
 compte2.afficherSolde()        
 
