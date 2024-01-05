@@ -71,6 +71,7 @@ tache3 = Tache("Faire la lessive", "Ne pas oublier d'ajouter de l'adoucissant", 
 tache4 = Tache("Faire le ménage", "Ne pas oublier de passer l'aspirateur", "terminé")
 
 
+
 liste = ListeDeTaches("To Do List")
 liste.ajouter_tache(tache1)
 liste.ajouter_tache(tache2)

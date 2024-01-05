@@ -1,3 +1,5 @@
+import time
+
 class joueur:
     def __init__(self, nom, numéro, position, nbButs, passesDecisives, cartonsJaunes, cartonsRouges):
         self.nom = nom
@@ -54,6 +56,19 @@ class Equipe:
                 print(f"Les statistiques du joueur {joueur.nom} ont été mises à jour")
 
 
+    def jouerTournoi(self, equipeAdverse):
+        
+        print(f"Le match {self.nom} contre {equipeAdverse.nom} va commencer")
+        for joueur in self.listeJoueurs:
+            time.sleep(3)
+            joueur.marquerUnBut()
+            joueur.effectuerUnePasseDecisive()
+            joueur.prendreUnCartonJaune()
+            joueur.prendreUnCartonRouge()
+        print(f"Le match {self.nom} contre {equipeAdverse.nom} est terminé")
+        
+
+
 marseille = Equipe("OM")
 joueur1 = joueur("Ronaldo", 7, "Attaquant", 3, 0, 0, 0)
 joueur2 = joueur("Messi", 10, "Attaquant", 7, 0, 0, 0)
@@ -87,15 +102,15 @@ dreamTeam.ajouterJoueur(joueur10)
 marseille.afficherStatistiquesJoueurs()
 dreamTeam.afficherStatistiquesJoueurs()
 
+marseille.jouerTournoi(dreamTeam)
+# # marquer un but
+# joueur1.marquerUnBut()
+# joueur6.marquerUnBut()
 
-# marquer un but
-joueur1.marquerUnBut()
-joueur6.marquerUnBut()
+# # carton rouge
+# joueur7.prendreUnCartonRouge()
 
-# carton rouge
-joueur7.prendreUnCartonRouge()
-
-# Afficher a jours statistiques
-marseille.afficherStatistiquesJoueurs()
-dreamTeam.afficherStatistiquesJoueurs()
+# # Afficher a jours statistiques
+# marseille.afficherStatistiquesJoueurs()
+# dreamTeam.afficherStatistiquesJoueurs()
 
